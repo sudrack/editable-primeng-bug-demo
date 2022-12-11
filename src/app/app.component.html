@@ -1,0 +1,11 @@
+<h5>Editable</h5>
+<div class="p-field-radiobutton">
+	<p-radioButton [(ngModel)]="editable" label="Editable" [value]="true"></p-radioButton>
+</div>
+<div class="p-field-radiobutton">
+	<p-radioButton class="ml-2" [(ngModel)]="editable" label="Fixed" [value]="false"></p-radioButton>
+</div>
+
+<p-dropdown placeholder="Enter a value" [options]="cities" [(ngModel)]="selectedCity2" [editable]="editable" optionLabel="name" (onChange)="print($event)"></p-dropdown>
+
+<h3 *ngIf="selectedCity2">The dropdown value selected is: {{selectedCity2.name}}</h3>
